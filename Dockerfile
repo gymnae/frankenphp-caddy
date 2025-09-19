@@ -23,7 +23,7 @@ RUN install-php-extensions \
  zlib \
  opcache
 
- ENV FRANKENPHP_CONFIG="worker ./public/index.php"
+ ENV FRANKENPHP_CONFIG="worker /home/caddy/public/index.php"
 
  ARG USER=caddy
 
