@@ -23,9 +23,9 @@ RUN install-php-extensions \
  zlib \
  opcache
 
- #ENV FRANKENPHP_CONFIG="worker /home/caddy/public/index.php"
-
  ARG USER=caddy
+
+ EXPOSE 443 80
 
 RUN \
 	# Use "adduser -D ${USER}" for alpine based distros
