@@ -1,4 +1,4 @@
-FROM dunglas/frankenphp:php8.3-alpine
+FROM dunglas/frankenphp:alpine
 
 RUN install-php-extensions \
  gd \
