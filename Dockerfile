@@ -33,6 +33,6 @@ RUN \
 	# Add additional capability to bind to port 80 and 443
 	setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp; \
 	# Give write access to /config/caddy and /data/caddy
-	chown -R ${USER}:${USER} /config/caddy /data/caddy
+	chown -R ${USER}:${USER} /config/caddy /data/caddy /app/public
 
 USER ${USER}
