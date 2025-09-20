@@ -28,7 +28,7 @@ RUN install-php-extensions \
 RUN apk add --no-cache \
 	git \
  	nano \
-  	htop \
+  	htop
    	
 EXPOSE 443 80
  
