@@ -15,7 +15,7 @@ jobs:
         id: check
         uses: lucacome/docker-image-update-checker@v1.2.1
         with:
-          base-image: dunglas/frankenphp:alpine
+          base-image: dunglas/frankenphp:builder
           image: gymnae/frankenphp:latest
         if: ${{ github.event_name == 'schedule' }}
   build:
