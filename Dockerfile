@@ -25,6 +25,8 @@ RUN CGO_ENABLED=1 \
 
 FROM dunglas/frankenphp AS runner
 
+COPY --from=builder /usr/local/bin/frankenphp /usr/local/bin/frankenphp
+
 ## install php extensions commonly used
 RUN install-php-extensions \
  gd \
