@@ -50,10 +50,11 @@ RUN install-php-extensions \
  opcache
 
 ## add some basic packages for QoL
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 	git \
  	nano \
-  	htop
+  	htop \
+	&& rm -rf /var/lib/apt/lists/*
    	
 EXPOSE 443 80
  
@@ -61,7 +62,7 @@ EXPOSE 443 80
 ARG USER=caddy
 RUN \
 	# Use "adduser -D ${USER}" for alpine based distros
-	adduser ${USER}; \
+	useradd ${USER}; \
 	# Add additional capability to bind to port 80 and 443
 	setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp; \
 	# Give write access to /config/caddy and /data/caddy
